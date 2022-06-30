@@ -1,42 +1,57 @@
 #include<stdio.h>
-int main()
+int isprime(int n)
 {
-    int i,n,t,c=0,d,s=0,l=0;
-    scanf("%d",&n);
-    t=n;
+    int p=0,i;
     for(i=1;i<=n;i++)
     {
         if(n%i==0)
         {
-            c++;
+            p++;
         }
     }
-    if(c==2)
+    return p;
+}
+int main()
+{
+    int n,rem,k,fc=0,p,i;
+    scanf("%d",&n);
+    p=isprime(n);
+    if(p==2)
     {
-        while(n)
+        while(n!=0)
         {
-            int k=0;
-            d=n%10;
+            rem=n%10;
             n=n/10;
-            l++;
-            for(i=1;i<=d;i++)
+            if(rem!=0)
             {
-                if(d%i==0)
+                for(i=1;i<=rem;i++)
                 {
-                   k++; 
+                    if(rem%i==0)
+                    {
+                        fc++;
+                    }
                 }
-            }
-            if(k==2)
-            {
-                s++;
+                if(fc==2)
+                {
+                    k=1;
+                }
+                else
+                {
+                    k=0;
+                }
+                fc=0;
             }
         }
+        if(k==1)
+        {
+            printf("Mega Prime");
+        }
+        else
+        {
+            printf("Not Mega Prime");
+        }
     }
-    if(s==l && c==2)
-    {
-        printf("Mega Prime");
-    }
-    else if(l!=s || c>2)
+    else
     {
         printf("Not Mega Prime");
     }
