@@ -1,22 +1,18 @@
 #include<stdio.h>
 int main()
 {
-	int n,i,c=0,m=1;
-	scanf("%d",&n);
-	for(i=1;n>0;)
-	{
-	  i=n%10;
-	  n=n/10;
-	
-	  c=c+i;
-	  m=m*i;
-	}
-	if(m==c)
-	{
-		printf("Spy Number");
-	}
-	else
-	{
-		printf("Not Spy Number");
-	}
+    int num,temp,m=1,s=0,d;
+    scanf("%d",&num);
+    temp=num;
+    while(temp!=0)
+    {
+        d=temp%10;
+        s=s+d;
+        m=m*d;
+        temp=temp/10;
+    }
+    if(s==m)
+    printf("Spy Number");
+    else
+    printf("Not Spy Number");
 }
