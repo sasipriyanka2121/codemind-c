@@ -14,5 +14,4 @@ int main()
     printf("Neon Number");
     else
     printf("Not Neon Number");
-    return 0;
 }
