@@ -1,36 +1,20 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-    int n,r,sum=0,a,c=1,p=1,i;
+    int i,n,r,s=0,c=0,n1,n2;
     scanf("%d",&n);
-    a=n;
-    while(a!=0)
+    n1=n2=n;
+    c=(n==0)?1:log10(n)+1;
+    while(n1>0)
     {
-        r=a%10;
-        sum=(sum*10)+r;
-        a=a/10;
+        r=n1%10;
+        s=s+pow(r,c);
+        n1=n1/10;
+        c--;
     }
-    a=sum;
-    sum=0;
-    while(a!=0)
-    {
-        r=a%10;
-        for(i=1;i<=c;i++)
-        {
-            p=p*r;
-        }
-        sum=sum+p;
-        a=a/10;
-        c++;
-        p=1;
-    }
-    if(sum==n)
-    {
-        printf("True");
-    }
+    if(n2==s)
+     printf("True");
     else
-    {
-        printf("False");
-    }
-    
+     printf("False");
 }
