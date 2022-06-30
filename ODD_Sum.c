@@ -1,18 +1,24 @@
 #include<stdio.h>
-int main()
+int odd_sum(int *arr,int n)
 {
-    int n,ar[20],sum=0;
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
+    int i,sum=0;
+    for(i=0;i<n;i++)
     {
-        scanf("%d",&ar[i]);
-    }
-    for(int i=0;i<n;i++)
-    {
-        if(ar[i]%2!=0)
+        if(arr[i]%2)
         {
-            sum=sum+ar[i];
+            sum=sum+arr[i];
         }
     }
-    printf("%d",sum);
+    return sum;
+}
+int main()
+{
+    int n,i,arr[100],k;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    k=odd_sum(arr,n);
+    printf("%d",k);
 }
