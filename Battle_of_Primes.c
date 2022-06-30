@@ -1,35 +1,32 @@
 #include<stdio.h>
-int p(int num)//
+int isprime(int n)
 {
-	int i,c=0;
-	for(i=1;i<=num;i++)
-	{
-		if(num%i==0)
-		{
-			c++;	
-		}	
-	}
-	if(c==2)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
-	
+    int i,p=0,k;
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            p++;
+        }
+    }
+    if(p==2)
+    {
+        return 1;
+    }
+    return 0;
 }
 int main()
 {
-    int n1,n2,n3,vk,s;
-    scanf("%d%d",&n1,&n2);
-    s=n1+n2;
-    for(vk=s+1;;vk++)
+    int n,m,i,k,p;
+    scanf("%d%d",&n,&m);
+    p=n+m;
+    for(i=1;i<=2*p;i++)
     {
-        if(p(vk))
+        k=isprime(p+i);
+        if(k==1)
         {
+            printf("%d ",i);
             break;
         }
     }
-    printf("%d",vk-s);
 }
