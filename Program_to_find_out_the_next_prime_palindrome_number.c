@@ -1,38 +1,35 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-    int n,c,r,m,i;
+    int n,p,r=0,c,d;
     scanf("%d",&n);
-    start:
-    n++;
-    m=n;
-    r=0;
-    while(m>0)
+    while(n!=0)
     {
-        r=r*10+m%10;
-        m/=10;
-    }
-    if(r==n)
-    {
-        c=0;
-        for(i=1;i<=n;i++)
+        n++;
+        p=n;
+        while(p!=0)
         {
-            if(n%i==0)
+            r=r*10;
+            r=r+p%10;
+            p=p/10;
+        }
+        if(r==n)
+        {
+            d=sqrt(n);
+            for(c=2;c<=d;c++)
             {
-                c++;
+                if(n%c==0)
+                {
+                    break;
+                }
+            }
+            if(c==d+1)
+            {
+                break;
             }
         }
-        if(c==2)
-        {
-            printf("%d",n);
-        }
-        else
-        {
-            goto start;
-        }
+        r=0;
     }
-    else
-    {
-        goto start;
-    }
+    printf("%d",n);
 }
