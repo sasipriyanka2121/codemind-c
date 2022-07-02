@@ -1,15 +1,17 @@
-#include<stdio.h>
+# include<stdio.h>
 int main()
 {
-int a,b,i,c;
-scanf("%d%d",&a,&b);
-for(i=1;i<=b;i++)
-{
-c=a*i;
-if(c%b==0)
-{
-printf("%d",c);
-break;
-}
-}
+    int min,n,m,lcm,i;
+    scanf("%d%d",&n,&m);
+    min=m>n?n:m;
+    for(i=min;;i+=min)
+    {
+        if(i%m==0&&i%n==0)
+        {
+            lcm=i;
+            break;
+        }
+    }
+    printf("%d",lcm);
+    return 0;
 }
