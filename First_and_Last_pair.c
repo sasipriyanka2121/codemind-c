@@ -1,27 +1,19 @@
-
 #include<stdio.h>
 int main()
-{   
-        int n,i;
+{
+    int n;
     scanf("%d",&n);
-    int a[107],b[100],j;
+    int a[n],i,j;
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    j=n-1;
-    i=0;
-   int k=0;
-    while(i<(n/2) && j>(n/2)-1)
+    for(i=0;i<n/2;i++)
     {
-      printf("%d %d ",a[i],a[j]);
-        i++;
-        j--;
+        printf("%d %d ",a[i],a[n-(i+1)]);
     }
     if(n%2!=0)
-    { // b[k+2]=a[n/2];
-       printf("%d ",a[n/2]);
-        printf("%d",0);
+    {
+        printf("%d 0",a[i]);
     }
-    return 0;
 }
